@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { MouseEvent, useState } from 'react'
 import Header from "../components/auth/Header"
@@ -7,11 +8,18 @@ import Button from '../components/auth/Button'
 import Bottom from '../components/auth/Bottom'
 import { SignupType } from '@abhi.makedevs/common-01'
 import axios from 'axios'
-import { BACKEND_URL } from '../config'
+// import { BACKEND_URL } from '../config'
 import { useNavigate } from 'react-router-dom'
 import InputBox2 from '../components/auth/InputBox2'
+import { config } from 'dotenv';
+import { API_KEY, BACKEND_URL } from '../config'
+config();
+
+// const BACKEND_URL = process.env.BACKEND_URL;
+
 
 function Signup() {
+  console.log(API_KEY);
   const [postInputs, setPostInputs] = useState<SignupType>({
     name: '',
     email: '',
