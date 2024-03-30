@@ -12,14 +12,13 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import InputBox2 from '../components/auth/InputBox2'
 import { config } from 'dotenv';
-import { API_KEY, BACKEND_URL } from '../config'
+import { BACKEND_URL } from '../config'
 config();
 
 // const BACKEND_URL = process.env.BACKEND_URL;
 
 
 function Signup() {
-  console.log(API_KEY);
   const [postInputs, setPostInputs] = useState<SignupType>({
     name: '',
     email: '',
