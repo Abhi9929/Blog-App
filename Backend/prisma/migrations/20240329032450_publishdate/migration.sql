@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Post" ADD COLUMN     "publishedDate" TIMESTAMP(3) NOT NULL DEFAULT '2024-03-29 03:21:39.001 +00:00';
