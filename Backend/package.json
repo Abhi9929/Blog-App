@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "deploy": 
+    "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
     "@abhi.makedevs/common-01": "^1.0.5",
