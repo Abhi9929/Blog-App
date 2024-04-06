@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Bottom({warning, to, label}: {warning: string, to: string, label: string}) {
