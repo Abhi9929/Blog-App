@@ -1,14 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useGetUser } from "../hooks";
 
 function Account() {
-
+    const navigate = useNavigate();
     const { userDetails } = useGetUser();
 
     let firstLetter = userDetails?.user.name;
     firstLetter = firstLetter?.split('')[0];
     const handleClick = () => {
         localStorage.removeItem("token");
-        window.location.href = '/blogs';
+        navigate('/blogs');
     }
     return (
         <div className="flex gap-4 items-center">

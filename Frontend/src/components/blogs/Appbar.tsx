@@ -34,7 +34,7 @@ function Appbar() {
             <Link to={'/blogs'} className='text-xl font-bold '>Dev.Blogs</Link>
           </div>
           <div className="flex gap-3">
-            <button className='bg-green-400 hover:bg-[#1fda63] py-2 font-semibold px-5 rounded-full h-fit'
+            <button className='bg-green-400 hover:bg-[#1fda63] py-2 font-semibold text-sm lg:text-lg px-5 rounded-full h-fit'
               onClick={(e) => {
                 token === null ? handleClick(e) : navigate('/write')
               }
