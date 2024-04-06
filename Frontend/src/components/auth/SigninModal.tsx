@@ -10,8 +10,10 @@ import SubHeading from './SubHeading'
 import InputBox from './InputBox'
 import Button from './Button'
 import Bottom from './Bottom'
+import { useNavigate } from 'react-router-dom'
 
 function SigninModal() {
+  const navigate = useNavigate();
   const [postInputs, setPostInputs] = useState<SigninType>({
     email: '',
     password: ''
@@ -30,7 +32,7 @@ function SigninModal() {
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken))
         
-        window.location.href = 'blogs';
+        navigate('/blogs');
       } catch (err) {      
         //@ts-ignore
         const error = err?.response.data.error;
