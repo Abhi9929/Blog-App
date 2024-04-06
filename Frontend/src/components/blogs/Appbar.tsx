@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import Modal from "../Modal";
 import SigninModal from "../auth/SigninModal";
@@ -11,13 +11,20 @@ function Appbar() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const token = localStorage.getItem("token");
 
+  useEffect(() => {
+    console.log("worked");
+    
+    if (token) {
+      setIsModalOpen(false);
+    } 
+  })
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsModalOpen(true);
   }
 
-  const token = localStorage.getItem("token");
 
   return (
     <>
