@@ -28,14 +28,13 @@ function SigninModal() {
         )
         const data = await response.data;
         console.log(data);
-        if(data.error) {
-          setError(data.error)
-          throw new Error(data.error)
-        }
         localStorage.setItem("token", JSON.stringify(data.accessToken))
         
         window.location.href = '/blogs';
-      } catch (error) {        
+      } catch (err) {      
+        //@ts-ignore
+        const error = err?.response.data.error;
+        setError(error)
         console.log("error occurs: ", error);
       }
     }

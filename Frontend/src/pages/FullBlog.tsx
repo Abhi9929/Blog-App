@@ -23,7 +23,7 @@ function FullBlog() {
   let { loading, blogs } = useBlogs();
 
   let { loading1, singleBlog } = useBlog(id);
-  
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,7 +31,7 @@ function FullBlog() {
 
   if (loading1 && !singleBlog) {
     return (<>
-     <SkeltonComponent />
+      <SkeltonComponent />
     </>)
   }
 
@@ -100,9 +100,6 @@ function FullBlog() {
             <div className="Content col-start-1 col-end-13 lg:col-start-3  lg:col-end-11 text-lg text-slate-800">
               <p className="leading-snug">
                 {singleBlog?.content}
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ex et rerum! Dignissimos, laboriosam ut earum facere autem mollitia rerum debitis quod sequi illo aperiam aliquid facilis sed eos corrupti excepturi, quidem quam doloremque nam. Inventore, ipsa velit odit accusamus error officia harum voluptatibus esse aut unde dolor odio, officiis minus assumenda quae eos voluptates facilis corporis laudantium nostrum. Distinctio, quis alias. Cupiditate magnam optio enim, velit explicabo deleniti quod esse vel earum exercitationem similique consequuntur iure tempora non itaque totam. Animi accusamus, iure culpa similique adipisci, unde harum nisi, beatae vitae aperiam voluptatem! Deserunt omnis quo autem consequuntur illo.
-                <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque non corporis, sequi praesentium consequuntur labore recusandae numquam explicabo cumque! In expedita officiis autem, dolores aut blanditiis, nulla quam amet tempore veniam earum voluptatibus animi temporibus? Placeat itaque magnam quas tenetur officiis. Numquam sint non accusamus neque eveniet, autem, doloribus repellat quod delectus odio qui ea blanditiis quae iusto, fugiat sapiente officiis odit distinctio molestias similique? Ea temporibus aspernatur consectetur assumenda nostrum accusamus explicabo debitis, laborum perferendis quibusdam provident cum odit quia fuga omnis quidem a. Eaque, doloribus aspernatur. Nemo cupiditate quas dignissimos, placeat unde similique autem voluptas! Dolores, amet quam.
               </p>
             </div>
           </div>
@@ -139,7 +136,6 @@ function FullBlog() {
 }
 
 function SkeltonComponent() {
-  console.log("called");
   return (<>
     <Appbar />
     <div className='px-5 md:px-0 md:max-w-3xl lg:max-w-6xl mx-auto mt-20'>
@@ -168,7 +164,7 @@ function SkeltonComponent() {
       </div>
       <br />
     </div>
-  </>) 
+  </>)
 }
 
 export default FullBlog 

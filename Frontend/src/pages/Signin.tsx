@@ -29,14 +29,12 @@ function Signin() {
           postInputs
         )
         const data = await response.data;
-        console.log(data);
-        if(data.error) {
-          setError(data.error)
-          throw new Error(data.error)
-        }
         localStorage.setItem("token", JSON.stringify(data.accessToken))
         navigate('/blogs');
-      } catch (error) {        
+      } catch (err) {
+        //@ts-ignore
+        const error = err?.response.data.error;
+        setError(error)
         console.log("error occurs: ", error);
       }
     }
@@ -58,11 +56,11 @@ function Signin() {
               onchange={
                 (event) => {
                   setPostInputs(prev => ({
-                  ...prev,
-                  email: event?.target.value
-                }))
-                setError('')
-              }}
+                    ...prev,
+                    email: event?.target.value
+                  }))
+                  setError('')
+                }}
               message={error}
             />
             <InputBox
@@ -73,11 +71,11 @@ function Signin() {
               onchange={
                 (event) => {
                   setPostInputs(prev => ({
-                  ...prev,
-                  password: event?.target.value
-                }))
-                setError('')
-              }}
+                    ...prev,
+                    password: event?.target.value
+                  }))
+                  setError('')
+                }}
               message={error}
             />
             <Button label={"Sign In"} onclick={handleClick} />

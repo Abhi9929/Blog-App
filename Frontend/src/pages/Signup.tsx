@@ -11,11 +11,7 @@ import axios from 'axios'
 import { BACKEND_URL } from '../config'
 import { useNavigate } from 'react-router-dom'
 import InputBox2 from '../components/auth/InputBox2'
-// import { config } from 'dotenv';
-// import { BACKEND_URL } from '../config'
-// config();
 
-// const BACKEND_URL = process.env.BACKEND_URL;
 
 
 function Signup() {
@@ -47,7 +43,7 @@ function Signup() {
           postInputs
         )
         const data = await response.data;
-        console.log(data);
+        // console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken))
         navigate('/blogs');
       } catch (err) {
