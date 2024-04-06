@@ -30,7 +30,7 @@ function SigninModal() {
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken))
         
-        window.location.href = '/blogs';
+        window.location.href = 'blogs';
       } catch (err) {      
         //@ts-ignore
         const error = err?.response.data.error;
