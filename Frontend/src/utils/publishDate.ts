@@ -17,3 +17,11 @@ export const extractFirst15Words = (content: string) => {
     
     return first15Words;
 }
+
+export const extractFirst25Words = (content: string) => {
+    const words = content.split(/\s+/);
+    
+    const first25Words = words.slice(0, 25).join(" ");
+    
+    return first25Words;
+}
