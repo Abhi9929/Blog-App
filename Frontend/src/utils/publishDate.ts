@@ -8,4 +8,12 @@ export const PublishedDate = (publishedDate: string) => {
     });
 
     return formattedDate;
-} 
+}
+
+export const extractFirst15Words = (content: string) => {
+    const words = content.split(/\s+/);
+    
+    const first15Words = words.slice(0, 15).join(" ");
+    
+    return first15Words;
+}
